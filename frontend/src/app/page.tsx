@@ -20,7 +20,9 @@ function DashboardPage() {
         >
           Node Next Auth
         </a>
-        <h1>Welcome To the dashboard, <b>{user.username }</b></h1>
+        <h1>
+          Welcome To the dashboard, {user && user.username != null ? <b>{user.username}</b> : ''}
+        </h1>        
         <div className="text-sm text-gray-600 dark:text-gray-400">
           <button onClick={() => logout() } className="flex items-center justify-center px-4 py-2 space-x-2 text-white transition-all duration-200 bg-black rounded-md hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 dark:focus:ring-offset-darker">
             Log Out
